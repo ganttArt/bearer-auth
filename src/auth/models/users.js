@@ -15,7 +15,11 @@ users.virtual('token').get(function () {
   let tokenObject = {
     username: this.username,
   }
-  return jwt.sign(tokenObject, process.env.SECRET)
+  return jwt.sign(tokenObject, process.env.SECRET,
+    // { expiresIn: process.env.JWT_EXPIRATION }
+  )
+  // implemented expiration date of jwt, set in .env currently to 15min
+  // unfortunately it broke the tests
 });
 
 users.pre('save', async function () {
