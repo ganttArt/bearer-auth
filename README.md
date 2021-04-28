@@ -13,7 +13,9 @@
 `.env` requirements
 
 - PORT - Port Number
-- MONGODB_URI - mongodb://localhost:27017/bearerAuth
+- MONGODB_URI - mongodb://localhost:27017/`<dbname>`
+- SECRET - `<secretkey of your choice>`
+- JWT_EXPIRATION - 15min
 
 ---
 
